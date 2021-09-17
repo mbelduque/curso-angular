@@ -1,9 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 
-interface Player {
-  userName: string;
-  level: number;
-}
+import {Player} from '../interfaces/player.interface';
 
 @Component({
   selector: 'app-main-page',
@@ -21,12 +18,12 @@ export class MainPageComponent implements OnInit {
 
   players: Player[] = [
     {
-      userName: 'Belduque',
-      level: 439
+      userName: 'nombreUsuario 1',
+      level: 500
     },
     {
-      userName: 'ElKuloMeza',
-      level: 234
+      userName: 'nombreUsuario 2',
+      level: 500
     }
   ];
 

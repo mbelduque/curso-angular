@@ -2,11 +2,8 @@
 <hr>
 <div class="row">
   <div class="col">
-    <h3>Players</h3>
-    <hr>
-    <ul *ngFor="let player of players">
-      <li>{{player.userName}} - {{player.level | number}}</li>
-    </ul>
+    <!-- detecta cambios en el componente padre y envía los valores al componente hijo app-players -->
+    <app-players [players]="players"></app-players>
   </div>
   <div class="col">
     <h3>Add Player</h3>
