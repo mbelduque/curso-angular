@@ -15,9 +15,20 @@ export class MainPageComponent implements OnInit {
   titleApp: string = 'PlayerUnknowns Battlegrounds';
 
   newPlayer: Player = {
-    userName: 'Mauricio',
-    level: 500
+    userName: '',
+    level: 0
   };
+
+  players: Player[] = [
+    {
+      userName: 'Belduque',
+      level: 439
+    },
+    {
+      userName: 'ElKuloMeza',
+      level: 234
+    }
+  ];
 
   constructor() {
   }
@@ -26,6 +37,14 @@ export class MainPageComponent implements OnInit {
   }
 
   add() {
+    if (this.newPlayer.userName.length === 0) {
+      return;
+    }
     console.log(this.newPlayer);
+    this.players.push(this.newPlayer);
+    this.newPlayer = {
+      userName: '',
+      level: 0
+    };
   }
 }
