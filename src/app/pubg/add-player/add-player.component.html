@@ -1,0 +1,7 @@
+<h3>Add Player</h3>
+<hr>
+<form (ngSubmit)="add()">
+  <input type="text" placeholder="User name" name="userName" [(ngModel)]="newPlayer.userName">
+  <input type="number" placeholder="Level" name="level" [(ngModel)]="newPlayer.level">
+  <button class="btn">Add Player</button>
+</form>
