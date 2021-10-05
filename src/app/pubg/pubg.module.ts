@@ -3,13 +3,15 @@ import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 
 import {MainPageComponent} from './main-page/main-page.component';
-import { PlayersComponent } from './players/players.component';
+import {PlayersListComponent} from './players-list/players-list.component';
+import {AddPlayerComponent} from './add-player/add-player.component';
 
 
 @NgModule({
   declarations: [
     MainPageComponent,
-    PlayersComponent
+    PlayersListComponent,
+    AddPlayerComponent
   ],
   exports: [
     MainPageComponent
