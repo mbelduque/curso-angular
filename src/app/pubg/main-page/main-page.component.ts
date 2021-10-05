@@ -11,11 +11,6 @@ export class MainPageComponent implements OnInit {
 
   titleApp: string = 'PlayerUnknowns Battlegrounds';
 
-  newPlayer: Player = {
-    userName: '',
-    level: 0
-  };
-
   players: Player[] = [
     {
       userName: 'nombreUsuario 1',
@@ -33,15 +28,4 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  add() {
-    if (this.newPlayer.userName.length === 0) {
-      return;
-    }
-    console.log(this.newPlayer);
-    this.players.push(this.newPlayer);
-    this.newPlayer = {
-      userName: '',
-      level: 0
-    };
-  }
 }
