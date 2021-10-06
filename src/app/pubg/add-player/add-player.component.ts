@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 import {Player} from "../interfaces/player.interface";
 
@@ -9,13 +9,12 @@ import {Player} from "../interfaces/player.interface";
 })
 export class AddPlayerComponent implements OnInit {
 
-  // Trae la data del arreglo players-list del componente padre
-  @Input() players: Player[] = [];
-
   @Input() newPlayer: Player = {
     userName: '',
     level: 0
   };
+
+  @Output() onNewPlayer: EventEmitter<Player> = new EventEmitter<Player>();
 
   constructor() {
   }
@@ -27,13 +26,11 @@ export class AddPlayerComponent implements OnInit {
     if (this.newPlayer.userName.length === 0) {
       return;
     }
-    console.log(this.newPlayer);
-    this.players.push(this.newPlayer);
+    this.onNewPlayer.emit(this.newPlayer);
     this.newPlayer = {
       userName: '',
       level: 0
     };
-    console.log(this.players);
   }
 
 }

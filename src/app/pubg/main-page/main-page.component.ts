@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 import {Player} from '../interfaces/player.interface';
 
@@ -22,10 +22,18 @@ export class MainPageComponent implements OnInit {
     }
   ];
 
+  newPlayer: Player = {
+    userName: '',
+    level: 0
+  };
+
   constructor() {
   }
 
   ngOnInit(): void {
   }
 
+  addPlayer(newPlayer: Player) {
+    this.players.push(newPlayer);
+  }
 }
