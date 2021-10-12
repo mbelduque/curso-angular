@@ -3,10 +3,10 @@
 <div class="row">
   <div class="col">
     <!-- detecta cambios en el componente padre y envía los valores al componente hijo players-list -->
-    <app-players-list [players]="players"></app-players-list>
+    <app-players-list></app-players-list>
   </div>
   <div class="col">
     <!-- se emite el evento onNewPlayer del componente hijo add player y se dispara addPlayer($event) del padre -->
-    <app-add-player [newPlayer]="newPlayer" (onNewPlayer)="addPlayer($event)"></app-add-player>
+    <app-add-player [newPlayer]="newPlayer"></app-add-player>
   </div>
 </div>

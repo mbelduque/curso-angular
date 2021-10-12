@@ -1,6 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import {Player} from '../interfaces/player.interface';
+import {PubgService} from "../services/pubg.service";
 
 @Component({
   selector: 'app-players-list',
@@ -10,9 +11,13 @@ import {Player} from '../interfaces/player.interface';
 export class PlayersListComponent implements OnInit {
 
   // Trae la data del arreglo players del componente padre main-page
-  @Input() players: Player[] = [];
+  // @Input() players: Player[] = [];
 
-  constructor() {
+  get players(): Player[] {
+    return this.pubgService.players;
+  }
+
+  constructor(private pubgService: PubgService) {
   }
 
   ngOnInit(): void {

@@ -1,6 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import {Player} from '../interfaces/player.interface';
+import {PubgService} from "../services/pubg.service";
 
 @Component({
   selector: 'app-main-page',
@@ -10,17 +11,6 @@ import {Player} from '../interfaces/player.interface';
 export class MainPageComponent implements OnInit {
 
   titleApp: string = 'PlayerUnknowns Battlegrounds';
-
-  players: Player[] = [
-    {
-      userName: 'nombreUsuario 1',
-      level: 500
-    },
-    {
-      userName: 'nombreUsuario 2',
-      level: 500
-    }
-  ];
 
   newPlayer: Player = {
     userName: '',
@@ -33,7 +23,4 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addPlayer(newPlayer: Player) {
-    this.players.push(newPlayer);
-  }
 }

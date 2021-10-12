@@ -1,6 +1,7 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 import {Player} from "../interfaces/player.interface";
+import {PubgService} from "../services/pubg.service";
 
 @Component({
   selector: 'app-add-player',
@@ -9,14 +10,14 @@ import {Player} from "../interfaces/player.interface";
 })
 export class AddPlayerComponent implements OnInit {
 
+  // @Output() onNewPlayer: EventEmitter<Player> = new EventEmitter<Player>();
+
   @Input() newPlayer: Player = {
     userName: '',
     level: 0
   };
 
-  @Output() onNewPlayer: EventEmitter<Player> = new EventEmitter<Player>();
-
-  constructor() {
+  constructor(private pubgService: PubgService) {
   }
 
   ngOnInit(): void {
@@ -26,7 +27,8 @@ export class AddPlayerComponent implements OnInit {
     if (this.newPlayer.userName.length === 0) {
       return;
     }
-    this.onNewPlayer.emit(this.newPlayer);
+    // this.onNewPlayer.emit(this.newPlayer);
+    this.pubgService.addPlayer(this.newPlayer);
     this.newPlayer = {
       userName: '',
       level: 0
