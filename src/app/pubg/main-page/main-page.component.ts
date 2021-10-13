@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 
 import {Player} from '../interfaces/player.interface';
-import {PubgService} from "../services/pubg.service";
 
 @Component({
   selector: 'app-main-page',
